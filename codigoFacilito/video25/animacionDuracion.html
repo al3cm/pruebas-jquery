@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Animaciones</title>
+	<script src="jquery-2.1.0.min.js"></script>
+	<script>
+		$(document).on("ready",function(){
+			$.fx.speeds.lento = 3000;
+			$.fx.speeds.muyRapido = 10;
+			$("#boton").on("click",function(){
+				$("#ejemplo").fadeOut("lento",function(){
+					//$("body").append("El elemento se ha borrado");
+					//$(this).remove();
+					$(this).fadeIn("muyRapido");
+				});
+			});		
+		});
+	</script>
+	<style>
+		#ejemplo
+		{
+			background-color: rgb(250,100,100);
+			height: 200px;
+			width: 400px;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="ejemplo"></div>
+	<button id="boton">Fade out</button>
+</body>
+</html>

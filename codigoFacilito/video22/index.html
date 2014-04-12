@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Document</title>
+	<script src="jquery-2.1.0.min.js"></script>
+	<script>
+		var caja1bg,v=0;
+		$(document).on("ready",function(){
+			/*
+			$("#caja1").mouseover(function(){
+				caja1bg=$(this).css("background");
+				$(this).css("background","red");
+			});
+			
+			$("#caja1").mouseout(function(){
+				$(this).css("background",caja1bg);
+			});
+			*/
+			/*
+
+			$("#caja1").on("mouseover",function(){
+				caja1bg = $(this).css("background");
+				$(this).css("background","red");
+			});
+
+			$("#caja1").on("mouseout",function(){
+				$(this).css("background",caja1bg);
+			});
+			*/
+			/*
+			var f1 = function(){console.log("Pasaste el cursor")};
+			var f2 = function(){
+				v++;
+				caja1bg=$(this).css("background");
+				$(this).css("background","red");
+				};
+			*/
+			/*
+			$("#caja1").on({
+				"mouseover":f2,
+				"mouseout":function(){
+				$(this).css("background",caja1bg);
+				if (v>=3)
+					$("#caja1").off("mouseover",f2);
+				}
+			});
+			*/
+			//$("#caja1").on("mouseover",function(){console.log("Pasaste el cursor")});
+			//$("#caja1").on("mouseover",f1);
+
+
+			$("#caja1").one("mouseover",function(){
+				caja1bg = $(this).css("background");
+				$(this).css("background","red");
+			});
+
+			$("#caja1").on("mouseout",function(){
+				$(this).css("background",caja1bg);
+			});
+		});
+	</script>
+	<style>
+		div
+		{
+			background: #AAA;
+			display: block;
+			height: 50px;
+			margin: 2px auto;
+			width: 400px;
+		}
+	</style>
+</head>
+<body>
+	<div id="caja1">
+		
+	</div>
+</body>
+</html>

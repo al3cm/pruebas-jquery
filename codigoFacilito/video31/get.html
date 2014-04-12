@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Get</title>
+	<script src="jquery-2.1.0.min.js"></script>
+	<script>
+		$(document).on("ready",function(){
+			/*
+			$.get("hola.html",function(data){
+				$("#receptor").html(data);
+			});
+			*/
+			$.get("hola.php",{nombre: "codigoFacilito"},function(data){
+				$("#receptor").html(data);
+			});		
+
+			
+		});
+
+	</script>
+</head>
+<body>
+	<div id="receptor"></div>
+</body>
+</html>

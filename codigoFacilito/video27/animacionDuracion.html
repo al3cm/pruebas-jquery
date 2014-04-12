@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Easing</title>
+	<script src="jquery-2.1.0.min.js"></script>
+	<script src="jquery.easing.1.3.js"></script>	
+	<script>
+		$(document).on("ready",function(){
+			$("#boton").on("click",function(){
+				$("#ejemplo").slideUp("slow","easeOutBounce");/*easing*/
+				$(this).animate({
+					height:['+=100','easeOutBounce'],
+					width:['+=50','linear']
+				});
+
+			});
+		});
+	</script>
+	<style>
+		#ejemplo
+		{
+			background-color: rgb(250,100,100);
+			height: 200px;
+			width: 400px;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="ejemplo"></div>
+	<button id="boton">Mover</button>
+</body>
+</html>

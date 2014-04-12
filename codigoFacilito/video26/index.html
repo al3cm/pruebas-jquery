@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Método Animate</title>
+	<script src="jquery-2.1.0.min.js"></script>
+	<script src="jquery.animate-colors-min.js"></script>
+	<script>
+		$(document).on("ready",function(){
+			$("#caja1").animate({
+				marginBottom: 0
+			},5000,function(){
+				$("#caja1").animate({
+					backgroundColor: "rgba(56,200,0,0.8)",/*Gracias al plugin animate-colors*/
+					marginTop: -100,
+					opacity: 0.5
+				});
+			});
+		});
+	</script>
+	<style>
+		body,html
+		{
+			padding: 100px;
+		}
+		div
+		{
+			display: block;
+			height: 80px;
+			margin: 0 auto;
+			width: 400px;
+		}
+		#caja1
+		{
+			background: rgba(56,56,56,0.8);
+			margin-bottom: 100px;
+		}
+		#caja2
+		{
+			background: rgba(89,69,36,0.8);
+		}
+	</style>
+</head>
+<body>
+	<div id="caja1"></div>
+	<div id="caja2"></div>
+</body>
+</html>

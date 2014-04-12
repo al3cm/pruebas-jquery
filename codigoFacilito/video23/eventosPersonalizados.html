@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Eventos Personalizados</title>
+	<script src="jquery-2.1.0.min.js"></script>
+	<script>
+		$(document).on("ready",function(){
+			$("#miInput").on("cambio",function(ev,id){
+				if(this.checked){
+					console.log(id);
+					//$("#miInput").removeAttr("checked");
+					$("#miInput").prop("checked",false);
+					$(".cambiar").text("Encender");
+				}else{
+					$("#miInput").prop("checked",true);
+					$(".cambiar").text("Apagado");	
+				};
+			});
+			$(".cambiar").on("click",function(){
+				$("#miInput").trigger("cambio",[$(this).attr("id")]);
+			});
+		});
+	</script>
+</head>
+<body>
+	<input type="checkbox" id="miInput" checked="checked">
+	<button class="cambiar" id="btnUno">Apagar</button>
+	<button class="cambiar" id="btnDos">Apagar</button>
+</body>
+</html>
